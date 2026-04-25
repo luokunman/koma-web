@@ -1,0 +1,23 @@
+
+> koma-web@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.30
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 4.4s
+ ○ Compiling / ...
+ ✓ Compiled / in 8.8s (463 modules)
+ GET / 200 in 9173ms
+ GET /_next/static/webpack/6ea34c533234b1a4.webpack.hot-update.json 404 in 9253ms
+ GET / 200 in 133ms
+ GET / 200 in 53ms
+ ✓ Compiled in 550ms (223 modules)
+ GET / 200 in 255ms
+ GET / 200 in 154ms
+ ✓ Compiled in 340ms (223 modules)
+ ✓ Compiled in 196ms (223 modules)
+ GET / 200 in 237ms
+ ✓ Compiled in 248ms (223 modules)
+ ✓ Compiled in 206ms (223 modules)

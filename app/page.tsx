@@ -134,7 +134,7 @@ export default function Page() {
                 下载Mac
               </a>
               <a className="button button-ghost" target="_blank"  href="https://komaapi.com">
-                获取KEY
+                获取激活
               </a>
             </div>
             <ul className="hero-stats">

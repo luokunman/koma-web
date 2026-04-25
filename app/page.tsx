@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
@@ -81,9 +83,9 @@ export default function Page() {
     <main>
       <header className="site-header" data-site-header>
         <div className="container nav-shell glass">
-          <a className="brand" href="#top" aria-label="AI 漫剧首页">
-            <span className="brand-mark">AI</span>
-            <span>AI 漫剧</span>
+          <a className="brand" href="#top" aria-label="KOMA 首页">
+            <Image className="brand-mark" src="/koma-logo.svg" alt="KOMA Logo" width={40} height={40} priority />
+            <span>KOMA</span>
           </a>
           <nav className="nav-links" aria-label="主导航">
             <a href="#preview">平台预览</a>
@@ -119,10 +121,10 @@ export default function Page() {
         <div className="aurora aurora-two" />
         <div className="container hero-grid">
           <div className="hero-copy reveal">
-            <span className="eyebrow">面向内容团队的 AI 漫剧生产中枢</span>
+            <span className="eyebrow">面向内容团队的 KOMA 生产中枢</span>
             <h1>把灵感、剧本、分镜与协作汇聚到一个可持续创作的平台。</h1>
             <p className="hero-text">
-              AI 漫剧帮助团队从创意提案到上线交付实现统一管理，让每一次创作都更快、更稳、更一致。
+              KOMA 帮助团队从创意提案到上线交付实现统一管理，让每一次创作都更快、更稳、更一致。
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#cta">
@@ -155,7 +157,7 @@ export default function Page() {
             <div className="visual-card glass">
               <div className="visual-top">
                 <span className="status-dot live" />
-                <span>AI 漫剧控制台</span>
+                <span>KOMA 控制台</span>
                 <span className="badge">SSR App Router</span>
               </div>
               <div className="visual-content">
@@ -311,7 +313,7 @@ export default function Page() {
           <div className="cta-card glass reveal" data-tilt>
             <div>
               <span className="eyebrow">立即开始</span>
-              <h2>让 AI 漫剧成为你团队的内容操作系统。</h2>
+              <h2>让 KOMA 成为你团队的内容操作系统。</h2>
               <p>从第一部作品开始建立标准流程，把高质量创作能力沉淀成长期资产。</p>
             </div>
             <div className="cta-actions">
@@ -330,8 +332,8 @@ export default function Page() {
         <div className="container footer-inner">
           <div>
             <a className="brand footer-brand" href="#top">
-              <span className="brand-mark">AI</span>
-              <span>AI 漫剧</span>
+              <span className="brand-mark">K</span>
+              <span>KOMA</span>
             </a>
             <p>为漫剧、漫画与 IP 内容团队打造的 AI 创作与协作平台。</p>
           </div>

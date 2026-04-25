@@ -84,7 +84,6 @@ export default function Page() {
       <header className="site-header" data-site-header>
         <div className="container nav-shell glass">
           <a className="brand" href="#top" aria-label="KOMA 首页">
-            <Image className="brand-mark" src="/koma-logo.svg" alt="KOMA Logo" width={40} height={40} priority />
             <span>KOMA</span>
           </a>
           <nav className="nav-links" aria-label="主导航">
@@ -341,7 +340,6 @@ export default function Page() {
         <div className="container footer-inner">
           <div>
             <a className="brand footer-brand" href="#top">
-              <span className="brand-mark">K</span>
               <span>KOMA</span>
             </a>
             <p>为漫剧、漫画与 IP 内容团队打造的 AI 创作与协作平台。</p>

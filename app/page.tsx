@@ -311,18 +311,27 @@ export default function Page() {
       <section className="section" id="cta">
         <div className="container">
           <div className="cta-card glass reveal" data-tilt>
-            <div>
+            <div className="cta-copy">
               <span className="eyebrow">立即开始</span>
               <h2>让 KOMA 成为你团队的内容操作系统。</h2>
               <p>从第一部作品开始建立标准流程，把高质量创作能力沉淀成长期资产。</p>
+              <div className="cta-actions">
+                <a className="button button-primary cta-contact-button" href="#contact-qr" data-contact-trigger>
+                  微信咨询
+                </a>
+                <a className="button button-ghost" href="#top">
+                  回到顶部
+                </a>
+              </div>
             </div>
-            <div className="cta-actions">
-              <a className="button button-primary" href="mailto:hello@aimanju.example">
-                联系我们
-              </a>
-              <a className="button button-ghost" href="#top">
-                回到顶部
-              </a>
+            <div className="cta-contact-card" id="contact-qr" data-contact-card>
+              <div className="cta-contact-text">
+                <span className="cta-contact-label">联系我们</span>
+                <p>扫码添加微信，获取产品介绍与演示安排。</p>
+              </div>
+              <div className="cta-qr-shell">
+                <Image src="/contact-qr.jpg" alt="KOMA 联系二维码" width={176} height={224} className="cta-qr-image" />
+              </div>
             </div>
           </div>
         </div>

@@ -22,9 +22,12 @@ export default function HomeInteractions() {
     const revealItems = Array.from(document.querySelectorAll<HTMLElement>('.reveal'));
     const tiltItems = Array.from(document.querySelectorAll<HTMLElement>('[data-tilt]'));
     const mobileLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-mobile-panel] a'));
+    const contactTrigger = document.querySelector<HTMLAnchorElement>('[data-contact-trigger]');
+    const contactCard = document.querySelector<HTMLElement>('[data-contact-card]');
     const prefersLight = window.matchMedia('(prefers-color-scheme: light)');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const supportsFinePointer = window.matchMedia('(pointer: fine)').matches;
+    let contactHighlightTimer: number | null = null;
 
     root.dataset.js = 'true';
 
@@ -113,6 +116,33 @@ export default function HomeInteractions() {
     window.addEventListener('scroll', updateScrollState, { passive: true });
     window.addEventListener('resize', updateScrollState);
     prefersLight.addEventListener('change', handleSystemThemeChange);
+
+    const handleContactClick = (event: MouseEvent) => {
+      if (!contactCard) {
+        return;
+      }
+
+      event.preventDefault();
+      contactCard.scrollIntoView({
+        behavior: prefersReducedMotion.matches ? 'auto' : 'smooth',
+        block: 'center',
+      });
+
+      contactCard.classList.remove('is-highlighted');
+      window.requestAnimationFrame(() => {
+        contactCard.classList.add('is-highlighted');
+      });
+
+      if (contactHighlightTimer) {
+        window.clearTimeout(contactHighlightTimer);
+      }
+
+      contactHighlightTimer = window.setTimeout(() => {
+        contactCard.classList.remove('is-highlighted');
+      }, 1800);
+    };
+
+    contactTrigger?.addEventListener('click', handleContactClick);
 
     const setFaqState = (item: HTMLElement, open: boolean) => {
       const trigger = item.querySelector<HTMLButtonElement>('[data-faq-trigger]');
@@ -212,9 +242,13 @@ export default function HomeInteractions() {
       window.removeEventListener('resize', updateScrollState);
       prefersLight.removeEventListener('change', handleSystemThemeChange);
       mobileToggle?.removeEventListener('click', handleMobileToggle);
+      contactTrigger?.removeEventListener('click', handleContactClick);
       themeButtons.forEach((button) => {
         button.removeEventListener('click', handleThemeToggle);
       });
+      if (contactHighlightTimer) {
+        window.clearTimeout(contactHighlightTimer);
+      }
       mobileLinkCleanups.forEach((cleanup) => cleanup());
       faqItems.forEach((item) => {
         const trigger = item.querySelector<HTMLButtonElement>('[data-faq-trigger]');
